@@ -1,4 +1,4 @@
-<?php $this->load->view('includes/header', ['title' => 'Home']); ?>
+<?php $this->load->view('includes/header', ['title' => 'Warning']); ?>
 <main class=" main">
     <!--==================== HOME ====================-->
     <section class="heli__home section" id="helicopter">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="about__image">
-                <img src="<?= base_url('assets/img/warning.jpg'); ?>" alt="about image" class="about__img">
+                <img src="<?= base_url('assets/img/warning.jpg'); ?>" alt="about image" class="heli__about__img">
                 <div class="about__shadow">
 
                 </div>

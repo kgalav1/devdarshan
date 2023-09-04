@@ -29,10 +29,10 @@
          <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                <li class="nav__item">
-                  <a href="<?= base_url('home') ?>" class="nav__link active-link">Home</a>
+                  <a href="<?= base_url('home'); ?>" class="nav__link active-link">Home</a>
                </li>
                <li class="nav__item">
-                  <a href="<?= base_url('about') ?>" class="nav__link">About</a>
+                  <a href="<?= base_url('about'); ?>" class="nav__link">About</a>
                </li>
                <li class="nav__item">
                   <a href="#popular" class="nav__link">Popular</a>
@@ -41,7 +41,7 @@
                   <a href="#explore" class="nav__link">Explore</a>
                </li>
                <li class="nav__item">
-                  <a href="<?= base_url('helicopter') ?>" class="nav__link">Helicopter</a>
+                  <a href="<?= base_url('helicopter'); ?>" class="nav__link">Helicopter</a>
                </li>
             </ul>
 

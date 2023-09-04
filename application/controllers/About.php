@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Helicopter extends CI_Controller
+class About extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('helicopter/index.php');
+        $this->load->view('about/index.php');
     }
 }
