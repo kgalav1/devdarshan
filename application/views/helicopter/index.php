@@ -2,8 +2,9 @@
 <main class=" main">
     <!--==================== HOME ====================-->
     <section class="heli__home section" id="helicopter">
+    <img src="assets/img/helicopter1.jpg" alt="helicopter image" class="heli__home__bg">
         <div class="heli__home__bg">
-            <h2 class="heli__home__title">Warning</h2>
+            <h2 class="heli__home__title">Warning :</h2>
         </div>
     </section>
 
