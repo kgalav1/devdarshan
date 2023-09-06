@@ -109,6 +109,8 @@
  </a>
 
  <!--=============== Animation ===============-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
  <script src="<?= base_url('assets/js/swiper.js'); ?>"></script>
  <script src="<?= base_url('assets/js/scrollreveal.min.js'); ?>"></script>
 

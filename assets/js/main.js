@@ -135,3 +135,96 @@ var swiper = new Swiper(".swiper", {
         }
     }
 });
+
+
+// gsap.from(".clients", {
+//     innerText: 0,
+//     duration: 5,
+//     snap : {
+//        innerText: 0.1
+//     }
+//   });
+
+const tl = gsap.timeline();
+// const items = document.querySelectorAll(".count");
+
+tl.from(".count1", {
+    textContent: 0,
+    duration: 4,
+    ease: "power1.in",
+    snap: { textContent: 1 },
+    stagger: {
+        onUpdate: function () {
+            this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+        },
+    }
+});
+
+tl.from(".count2", {
+    textContent: 0,
+    duration: 1,
+    ease: "power1.in",
+    snap: { textContent: 1 },
+    stagger: {
+        onUpdate: function () {
+            this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+        },
+    }
+});
+
+tl.from(".count3", {
+    textContent: 0,
+    duration: 1,
+    ease: "power1.in",
+    snap: { textContent: 1 },
+    stagger: {
+        onUpdate: function () {
+            this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+        },
+    }
+});
+
+tl.from(".count4", {
+    textContent: 0,
+    duration: 3,
+    ease: "power1.in",
+    snap: { textContent: 1 },
+    stagger: {
+        onUpdate: function () {
+            this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
+        },
+    }
+});
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+gsap.registerPlugin(ScrollTrigger);
+
+let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
+
+gsap.utils.toArray("section").forEach((section, i) => {
+  section.bg = section.querySelector(".bg"); 
+
+  // Give the backgrounds some random images
+  section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
+  
+  // the first image (i === 0) should be handled differently because it should start at the very top.
+  // use function-based values in order to keep things responsive
+  gsap.fromTo(section.bg, {
+    backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+  }, {
+    backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      start: () => i ? "top bottom" : "top top", 
+      end: "bottom top",
+      scrub: true,
+      invalidateOnRefresh: true // to make it responsive
+    }
+  });
+
+});

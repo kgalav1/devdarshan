@@ -28,7 +28,7 @@
                 </h2> -->
 
                 <p class="about__description">
-                    <span style="color:white;">Dev Darshan Yatra promises top-quality, transparent services, specializing in Uttarakhand's culture, heritage, pilgrimage, and religion.</span> <br><br>
+                    <span style="color:white; font-size:15px;">Dev Darshan Yatra promises top-quality, transparent services, specializing in Uttarakhand's culture, heritage, pilgrimage, and religion.</span> <br><br>
                     1. With extensive experience and branches across major cities, including Delhi, Goa, and Rishikesh. <br> <br>
                     2. We offer Chardham Yatra Package Tours and Helicopter Services, ensuring luxury and comfort at affordable rates. <br><br>
                     3. Customizable tours and convenient inter-city transportation complete their offerings.
@@ -44,19 +44,31 @@
     <section class="about__numericData" id="about__numericData">
         <div class="parent__about__numericData">
             <div class="clients numeric__data">
-                <h1>1000+</h1>
+                <div class="count__data">
+                    <h1 class="count1">1000</h1>
+                    <h1>+</h1>
+                </div>
                 <p>Peoples Travel</p>
             </div>
             <div class="trips numeric__data">
-                <h1>50+</h1>
+                <div class="count__data">
+                    <h1 class="count2">50</h1>
+                    <h1>+</h1>
+                </div>
                 <p>Trips Placed</p>
             </div>
             <div class="places numeric__data">
-                <h1>15+</h1>
+                <div class="count__data">
+                    <h1 class="count3">15</h1>
+                    <h1>+</h1>
+                </div>
                 <p>Places Visited</p>
             </div>
             <div class="reviews numeric__data">
-                <h1>9999+</h1>
+                <div class="count__data">
+                    <h1 class="count4">999</h1>
+                    <h1>+</h1>
+                </div>
                 <p>Reviews Achevied</p>
             </div>
         </div>
@@ -121,6 +133,9 @@
     <!--==================== WHY CHOOSE US ====================-->
     <section class="choose" id="choose">
         <!-- <div class="choose__parent"> -->
+        <div class="warning__text container">
+            <h2 class="underline">WHY CHOOSE US ?</h2>
+        </div>
         <div class="aboutus__container grid">
             <div class="about__data">
                 <h2 class="section__title">
