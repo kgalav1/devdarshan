@@ -62,7 +62,8 @@ html {
 
 body,
 button,
-input {
+input,
+textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--text-color);
@@ -73,7 +74,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   outline: none;
   border: none;
 }
@@ -466,7 +468,8 @@ img {
   row-gap: 1rem;
 }
 
-.heli__about__container {
+.heli__about__container,
+.contact__about__container {
   row-gap: 3rem;
 }
 
@@ -654,6 +657,14 @@ img {
 .join__input {
   padding: 1.25rem 1rem;
   background-color: var(--container-color);
+  width: 100%;
+}
+
+.join__text {
+  padding: 1.25rem 1rem;
+  background-color: var(--container-color);
+  width: 100%;
+  height: 50px;
 }
 
 .join__button {
@@ -827,7 +838,8 @@ img {
   .about__container,
   .explore__content,
   .join__container,
-  .heli__about__container {
+  .heli__about__container,
+  .contact__about__container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -844,7 +856,8 @@ img {
 
   .about__container,
   .join__container,
-  .heli__about__container {
+  .heli__about__container,
+  .contact__about__container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
@@ -1001,6 +1014,13 @@ img {
     border-radius: 3px;
   }
 
+  .contact__about__container {
+    grid-template-columns: 500px 550px;
+    column-gap: 8.5rem;
+    padding-block: 1rem;
+    border-radius: 3px;
+  }
+
   .about__description {
     margin-bottom: 3rem;
   }
@@ -1008,6 +1028,11 @@ img {
   .heli__about__img {
     width: 460px;
     transition: transform .4s;
+    border-radius: 5px;
+  }
+
+  .contact__about__img {
+    width: 300px;
     border-radius: 5px;
   }
 
@@ -1153,9 +1178,13 @@ img {
   border-bottom: 2px solid crimson;
 }
 
-/* .swiper-wrapper{
+.contact__icon {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.intouch__icon {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 20px;
-} */
+}
