@@ -2,9 +2,11 @@
 <main class=" main">
     <!--==================== HOME ====================-->
     <section class="heli__home section" id="helicopter">
-        <div class="about__home__bg">
+        <img src="assets/img/aboutus-bg.jpg" alt="about image" class="heli__home__bgImg">
+        <img src="<?= base_url('assets/img/about.jpg'); ?>" alt="about image" class="about__head__img">
+        <div class="heli__home__bg">
             <h2 class="heli__home__title">About Us</h2>
-            <img src="<?= base_url('assets/img/about.jpg'); ?>" alt="about image" class="about__head__img">
+            <p>Home > About</p>
         </div>
         <div class="about__main__text">
             Dev Darshan Yatra Travels helps you to plan your trips and provides all the information of the destinations in economical way with wide selection of our various packages which makes your tour easy & happy. We remain committed to our mission of “ creating happy travelers ”.
@@ -13,25 +15,17 @@
 
     <!--==================== ABOUT ====================-->
     <section class="heli__about heli__section" id="heli__about">
-        <div class="heli__about__container container grid">
+        <div class="aboutus__container container grid">
 
             <div class="about__image">
                 <img src="<?= base_url('assets/img/about2.jpg'); ?>" alt="about image" class="about_us__img">
-                <div class="about__shadow">
-                </div>
+                <div class="about__shadow"></div>
             </div>
 
             <div class="about__data">
-                <!-- <h2 class="heli__section__title">
-                    Organization -
-                    <small class="small"> Dev Darshan Yatra </small>
-                </h2> -->
 
                 <p class="about__description">
-                    <span style="color:white; font-size:15px;">Dev Darshan Yatra promises top-quality, transparent services, specializing in Uttarakhand's culture, heritage, pilgrimage, and religion.</span> <br><br>
-                    1. With extensive experience and branches across major cities, including Delhi, Goa, and Rishikesh. <br> <br>
-                    2. We offer Chardham Yatra Package Tours and Helicopter Services, ensuring luxury and comfort at affordable rates. <br><br>
-                    3. Customizable tours and convenient inter-city transportation complete their offerings.
+                    <span style="color:white; font-size:15px;">We promise an excellent quality and state-of-art services to our clients for which we always keep transparency of every things. We are very familiar with the art of living, culture, heritage, pilgrimage and religion of Uttarakhand. The directors of the Dev Darshan Yatra, the planner and staffs are fully experienced to match the requisites of catering to our clients that demands the very best and we promise to deliver the same at any cost.</span>
                 </p>
 
             </div>
@@ -39,40 +33,6 @@
         </div>
     </section>
 
-    <!--==================== ABOUT ====================-->
-
-    <section class="about__numericData" id="about__numericData">
-        <div class="parent__about__numericData">
-            <div class="clients numeric__data">
-                <div class="count__data">
-                    <h1 class="count1">1000</h1>
-                    <h1>+</h1>
-                </div>
-                <p>Peoples Travel</p>
-            </div>
-            <div class="trips numeric__data">
-                <div class="count__data">
-                    <h1 class="count2">50</h1>
-                    <h1>+</h1>
-                </div>
-                <p>Trips Placed</p>
-            </div>
-            <div class="places numeric__data">
-                <div class="count__data">
-                    <h1 class="count3">15</h1>
-                    <h1>+</h1>
-                </div>
-                <p>Places Visited</p>
-            </div>
-            <div class="reviews numeric__data">
-                <div class="count__data">
-                    <h1 class="count4">999</h1>
-                    <h1>+</h1>
-                </div>
-                <p>Reviews Achevied</p>
-            </div>
-        </div>
-    </section>
 
     <!--==================== ATTORNEY ====================-->
     <section class="popular" id="popular">
@@ -126,6 +86,41 @@
                         <span>Employee</span>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== ABOUT ====================-->
+
+    <section class="about__numericData" id="about__numericData">
+        <div class="parent__about__numericData">
+            <div class="clients numeric__data">
+                <div class="count__data">
+                    <h1 class="count1">1000</h1>
+                    <h1>+</h1>
+                </div>
+                <p>Peoples Travel</p>
+            </div>
+            <div class="trips numeric__data">
+                <div class="count__data">
+                    <h1 class="count2">50</h1>
+                    <h1>+</h1>
+                </div>
+                <p>Trips Placed</p>
+            </div>
+            <div class="places numeric__data">
+                <div class="count__data">
+                    <h1 class="count3">15</h1>
+                    <h1>+</h1>
+                </div>
+                <p>Places Visited</p>
+            </div>
+            <div class="reviews numeric__data">
+                <div class="count__data">
+                    <h1 class="count4">999</h1>
+                    <h1>+</h1>
+                </div>
+                <p>Reviews Achevied</p>
             </div>
         </div>
     </section>

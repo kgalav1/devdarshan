@@ -2,9 +2,10 @@
 <main class=" main">
     <!--==================== HOME ====================-->
     <section class="heli__home section" id="helicopter">
-    <img src="assets/img/helicopter1.jpg" alt="helicopter image" class="heli__home__bg">
+    <img src="assets/img/helicopter5.jpg" alt="helicopter image" class="heli__home__bgImg">
         <div class="heli__home__bg">
             <h2 class="heli__home__title">Warning :</h2>
+            <p>Home > Warning</p>
         </div>
     </section>
 
@@ -12,14 +13,14 @@
     <section class="heli__about heli__section" id="heli__about">
         <img src="<?= base_url('assets/img/graph.png'); ?>" alt="svg" class="heli__about__svg">
         <div class="warning__text container">
-            <h2><span>WARNING(चेतावनी)</span>: Dev Darshan Yatra is owned by only www.devdarshanyatra.com . We are
+            <h4><span>WARNING(चेतावनी)</span>: Dev Darshan Yatra is owned by only www.devdarshanyatra.com . We are
                 not responsible for any other fake website in the name of Dev Darshan Yatra. Our company has only
                 one current account which is mentioned on the website, apart from this our company is not
-                responsible for any other payment details.</h2>
+                responsible for any other payment details.</h4>
 
-            <h3 class="heli__note__text">
+            <h4 class="heli__note__text">
                 Note: Book helicopter ticket only from government website.
-            </h3>
+            </h4>
             <hr>
         </div>
         <div class="heli__about__container container grid">

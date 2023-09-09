@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -257,42 +258,28 @@ img {
   object-position: center;
 }
 
-.heli__home__bg {
+.heli__home__bgImg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 350px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
-  /* background: linear-gradient(45deg, #0b6ff6 10%, #00bfee 90%); */
-  /* border-radius: 0% 10% 50% 50% / 26% 0% 11% 10%; */
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  /* margin-left: 10px; */
 }
 
-.about__home__bg {
+.heli__home__bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
-  /* border-radius: 0% 10% 50% 50% / 26% 0% 11% 10%; */
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  top: 28%;
+  left: 45%;
+  width: fit-content;
 }
 
 .about__head__img {
   position: absolute;
   width: 400px;
   right: 80px;
-  top: 50vh;
+  top: 40vh;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -301,13 +288,11 @@ img {
 .about__main__text {
   position: relative;
   color: white;
-  width: 60%;
   padding: 10px;
   text-align: start;
-  top: 43vh;
-  width: 40vw;
-  /* float: right; */
-  margin-left: 15vw;
+  top: 35vh;
+  width: 50vw;
+  margin-left: 10vw;
   margin-bottom: 2rem;
 }
 
@@ -320,9 +305,11 @@ img {
 .heli__home__title {
   padding-bottom: 2px;
   border-bottom: 2px solid crimson;
-  margin-left: 40px;
-  margin-top: 60px;
-  color: black;
+  /* margin-left: 40px; */
+  /* margin-top: 60px; */
+  color: white;
+  width: fit-content;
+  font-family: 'Black Ops One', cursive;
 }
 
 .home__shadow {
@@ -349,7 +336,7 @@ img {
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
 .numeric__data {
@@ -462,11 +449,13 @@ img {
   row-gap: 3rem;
 }
 
-.aboutus__container {
-  row-gap: 1rem;
+.heli__about__container {
+  row-gap: 3rem;
 }
 
-.heli__about__container {
+.aboutus__container {
+  background-color: #81adde;
+  margin-top: 5rem;
   row-gap: 3rem;
 }
 
@@ -475,7 +464,7 @@ img {
 }
 
 .about__description {
-  margin-top: 3.6rem;
+  margin-top: 2rem;
 }
 
 .about__image {
@@ -827,7 +816,8 @@ img {
   .about__container,
   .explore__content,
   .join__container,
-  .heli__about__container {
+  .heli__about__container,
+  .aboutus__container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -844,7 +834,8 @@ img {
 
   .about__container,
   .join__container,
-  .heli__about__container {
+  .heli__about__container,
+  .aboutus__container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
@@ -918,8 +909,8 @@ img {
   }
 
   .heli__about {
-    margin-top: 38vh;
-    padding: 50px 0;
+    margin-top: 20vh;
+    padding: 40px 0;
     position: relative;
   }
 
@@ -997,7 +988,13 @@ img {
     grid-template-columns: 400px 340px;
     column-gap: 8.5rem;
     padding-block: 1rem;
-    background-color: #69abd4b3;
+    border-radius: 3px;
+  }
+
+  .aboutus__container {
+    grid-template-columns: 400px 450px;
+    column-gap: 8.5rem;
+    padding-block: 1rem;
     border-radius: 3px;
   }
 
@@ -1006,13 +1003,14 @@ img {
   }
 
   .heli__about__img {
-    width: 460px;
+    width: 320px;
     transition: transform .4s;
     border-radius: 5px;
   }
 
   .about_us__img {
-    width: 460px;
+    width: 400px;
+    border-radius: 5px;
     transition: transform .4s;
   }
 
@@ -1117,10 +1115,10 @@ img {
   background: white;
 }
 
-.warning__text>h2>span {
+.warning__text>h4>span {
   color: crimson;
   text-decoration: underline;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .footer__svg {
