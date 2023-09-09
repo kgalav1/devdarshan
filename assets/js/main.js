@@ -137,16 +137,7 @@ var swiper = new Swiper(".swiper", {
 });
 
 
-// gsap.from(".clients", {
-//     innerText: 0,
-//     duration: 5,
-//     snap : {
-//        innerText: 0.1
-//     }
-//   });
-
 const tl = gsap.timeline();
-// const items = document.querySelectorAll(".count");
 
 tl.from(".count1", {
     textContent: 0,
@@ -201,30 +192,65 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-gsap.registerPlugin(ScrollTrigger);
+// ===================================== Common Function ============================================
 
-let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
-
-gsap.utils.toArray("section").forEach((section, i) => {
-  section.bg = section.querySelector(".bg"); 
-
-  // Give the backgrounds some random images
-  section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
-  
-  // the first image (i === 0) should be handled differently because it should start at the very top.
-  // use function-based values in order to keep things responsive
-  gsap.fromTo(section.bg, {
-    backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
-  }, {
-    backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: section,
-      start: () => i ? "top bottom" : "top top", 
-      end: "bottom top",
-      scrub: true,
-      invalidateOnRefresh: true // to make it responsive
+function baseURL() {
+    var setUrl = $('input#setUrl').val();
+    if (setUrl == undefined || setUrl == '') {
+        url = window.location.href;
+    } else {
+        url = setUrl;
     }
-  });
 
-});
+    if (!url || (url && url.length === 0)) {
+        return "";
+    }
+    return url ? url : "";
+}
+
+function notify(msg, cls) {
+    const cleanedString = msg.replace(/<p>/g, '').replace(/<\/p>/g, '');
+    $.notify(cleanedString, cls);
+}
+
+
+function resetValues() {
+    $("#" + arguments[0] + "").find('input[type=text], input[type=email], select, input[type=hidden]').each(function () {
+        $(this).val('');
+    })
+}
+
+function refreshCaptcha() {
+    let page = baseURL();
+    $.ajax({
+        url: page + '/refreshCaptcha',
+        type: 'POST',
+        success: function (data) {
+            $('.captcha').empty().html(data);
+        }
+    });
+}
+
+
+function addData(form_name) {
+    let url = 'contact/' + form_name;
+    let form = $("#" + form_name + "");
+    let data = new FormData(form[0]);
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        dataType: 'JSON',
+        success: function (data) {
+            if (data.statusCode == '200') {
+                notify(data.message, "success");
+                resetValues(form_name);
+            } else {
+                notify(data.error, "error");
+            }
+        }
+    });
+}

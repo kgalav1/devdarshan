@@ -237,10 +237,10 @@
                     travel and information from us.
                 </p>
 
-                <form action="" class="join__form">
-                    <input type="email" placeholder="Enter your email" class="join__input">
+                <form class="join__form" id="subscribe">
+                    <input type="email" name="email" placeholder="Enter your email" class="join__input" maxlength="50" required>
 
-                    <button class="join__button button">
+                    <button class="join__button button" type="button" onclick="addData('subscribe')">
                         Subscribe Our Newsletter <i class="ri-arrow-right-line"></i>
                     </button>
                 </form>
@@ -254,3 +254,25 @@
     </section>
 </main>
 <?php $this->load->view('includes/footer'); ?>
+
+<script>
+    $(document).ready(function() {
+        visitData();
+    });
+
+    function visitData() {
+        let base_url = baseURL();
+        let url = base_url + '/visit';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'JSON',
+            success: function(data) {
+                console.log('Welcome to our website');
+            }
+        });
+    }
+</script>
