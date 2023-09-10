@@ -41,7 +41,7 @@
                   <a href="<?= base_url('helicopter'); ?>" class="nav__link">Helicopter</a>
                </li>
                <li class="nav__item">
-                  <a href="<?= base_url('contact'); ?>" class="nav__link">Contact US</a>
+                  <a href="<?= base_url('Contact'); ?>" class="nav__link">Contact US</a>
                </li>
             </ul>
 

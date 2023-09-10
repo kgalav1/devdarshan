@@ -33,6 +33,7 @@ class Contact extends CI_Controller
 
         $data = create_captcha($values);
         $this->session->set_userdata('Captch', $data);
+        // print_R($data);die;
         $dataArray['image'] = $data['image'];
 
         $this->load->view('contact/index.php', $dataArray);

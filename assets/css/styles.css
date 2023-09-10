@@ -455,8 +455,9 @@ img {
   row-gap: 3rem;
 }
 
-.heli__about__container,
-.contact__about__container {
+.aboutus__container {
+  background-color: #81adde;
+  margin-top: 5rem;
   row-gap: 3rem;
 }
 
@@ -826,11 +827,8 @@ img {
   .explore__content,
   .join__container,
   .heli__about__container,
-<<<<<<< HEAD
-  .aboutus__container {
-=======
+  .aboutus__container,
   .contact__about__container {
->>>>>>> 7fde8117dd2951c0bdfc7c89da1daf1a1878b710
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -848,11 +846,8 @@ img {
   .about__container,
   .join__container,
   .heli__about__container,
-<<<<<<< HEAD
-  .aboutus__container {
-=======
+  .aboutus__container,
   .contact__about__container {
->>>>>>> 7fde8117dd2951c0bdfc7c89da1daf1a1878b710
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
