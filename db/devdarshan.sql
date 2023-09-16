@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               10.4.25-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.3.0.6589
+-- HeidiSQL Version:             12.5.0.6677
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,6 +19,21 @@
 CREATE DATABASE IF NOT EXISTS `devdarshan` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `devdarshan`;
 
+-- Dumping structure for table devdarshan.booking_details
+CREATE TABLE IF NOT EXISTS `booking_details` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `package` varchar(100) DEFAULT NULL,
+  `check_in` date DEFAULT NULL,
+  `check_out` date DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table devdarshan.booking_details: ~0 rows (approximately)
+
 -- Dumping structure for table devdarshan.contact_details
 CREATE TABLE IF NOT EXISTS `contact_details` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -28,13 +43,14 @@ CREATE TABLE IF NOT EXISTS `contact_details` (
   `phone` varchar(50) DEFAULT NULL,
   `message` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table devdarshan.contact_details: ~3 rows (approximately)
+-- Dumping data for table devdarshan.contact_details: ~2 rows (approximately)
 INSERT INTO `contact_details` (`id`, `first_name`, `last_name`, `email`, `phone`, `message`) VALUES
 	(1, 'Khushal', 'Galav', 'khushal@sansoftwares.com', '9783618305', 'demo mesage'),
 	(2, 'Praful', 'Kumar', 'praful.kumar@sansoftwares.com', '9876543210', 'ok\r\n'),
-	(3, 'fsdf', 'sdf', 'fsdf@gsmad.dsa', '9999999999', 'dfsdfs');
+	(3, 'fsdf', 'sdf', 'fsdf@gsmad.dsa', '9999999999', 'dfsdfs'),
+	(4, 'Manish', 'Gupta', 'khushal@sansoftwares.com', '9876541230', 'ok');
 
 -- Dumping structure for table devdarshan.subscribe
 CREATE TABLE IF NOT EXISTS `subscribe` (
@@ -57,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `user_details` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table devdarshan.user_details: ~1 rows (approximately)
+-- Dumping data for table devdarshan.user_details: ~0 rows (approximately)
 INSERT INTO `user_details` (`id`, `user_browser`, `user_ip`, `user_device`) VALUES
 	(1, 'Chrome', '::1', 'pc');
 
