@@ -1,10 +1,12 @@
-<?php $this->load->view('includes/header', ['title' => 'Warning']); ?>
+<?php $this->load->view('includes/header', ['title' => 'Contact Us']); ?>
 <main class=" main">
     <!--==================== HOME ====================-->
+
     <section class="heli__home section" id="helicopter">
-        <img src="assets/img/helicopter1.jpg" alt="helicopter image" class="heli__home__bg">
+    <img src="assets/img/helicopter5.jpg" alt="helicopter image" class="heli__home__bgImg">
         <div class="heli__home__bg">
-            <h2 class="heli__home__title">Warning :</h2>
+            <h2 class="heli__home__title">Contact Us :</h2>
+            <p>Home > Contact Us</p>
         </div>
     </section>
 
@@ -57,16 +59,10 @@
                             <textarea name="message" id="message" cols="30" rows="10" class="join__input" placeholder="Message" maxlength="200" autocomplete="off" required></textarea>
                         </div>
                         <div class="col-md-6 mb-2">
-                            <div class="captcha">
-                                <?php echo $image; ?>
-                            </div>
-                            <div class="captch__refresh">
-                                <a onclick="refreshCaptcha()" class="refresh_captch_link"><i class="ri-refresh-line"></i></a>
-                            </div>
-                            <input type="text" name="captcha_word" autocomplete="off" class="lgn-inpt" maxlength="10" value="" placeholder="Enter word " required />
+                        <div class="g-recaptcha" data-sitekey="6Lcu0CgoAAAAAFHEyzottNTREA6xlJELFSlSfKhT"></div>
                         </div>
                         <div class="col-md-6 mb-2">
-                            <button class="join__button button" type="button" id="submit" onclick="addData('contact')">
+                            <button class="join__button button float-end" type="button" id="submit" onclick="addData('contact')">
                                 Submit <i class="ri-arrow-right-line"></i>
                             </button>
                         </div>

@@ -232,9 +232,9 @@ function refreshCaptcha() {
 }
 
 
-function addData(form_name) {
-    let url = 'contact/' + form_name;
-    let form = $("#" + form_name + "");
+function addData(function_name) {
+    let url = 'contact/' + function_name;
+    let form = $("#" + function_name + "");
     let data = new FormData(form[0]);
     $.ajax({
         type: 'POST',
@@ -247,7 +247,7 @@ function addData(form_name) {
         success: function (data) {
             if (data.statusCode == '200') {
                 notify(data.message, "success");
-                resetValues(form_name);
+                resetValues(function_name);
             } else {
                 notify(data.error, "error");
             }

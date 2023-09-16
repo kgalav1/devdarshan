@@ -14,6 +14,7 @@
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="<?= base_url('assets/css/swiper.css'); ?>" />
    <link rel="stylesheet" href="<?= base_url('assets/css/styles.css'); ?>">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
    <title><?= WEBSITE_TITLE_PREFIX ?> <?= $title ?></title>
 

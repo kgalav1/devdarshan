@@ -6,78 +6,55 @@ class Contact extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("Contact_Model", "model");
-        $this->load->library('user_agent');
+        $this->load->model("ContactModel", "model");
+        // $this->load->model("user_agent");
     }
 
     public function index()
     {
-        $fcpath = str_replace("\\", "/", FCPATH);
-        $data = array();
-        $data['image'] = '';
-        $this->load->helper('captcha');
-        $values = array(
-            'word' => '', //Generate alternate word by default. You can also set your word.
-            'word_length' => 4, // To set length of captcha word.
-            'img_path' => $fcpath . 'uploads/captcha/', // Create  folder "images" in root directory, and give path.
-            'img_url' => base_url() . 'uploads/captcha/', // To store captcha images in "images" folder.
-            'font_size' => 12,
-            // Font path is used font library, which will stored  in system/fonts/texb.ttf.
-            'font_path' => FCPATH . '/assets/fonts/captcha0.ttf', 'img_width' => '120', //Set image width.
-            'img_height' => 30, // Set image height.
-            'expiration' => 60, // This will automatically expire images in given time.
-
-            'colors' => array('background' => array(69, 141, 213), 'border' => array(69, 141, 213), 'text' => array(255, 255, 255), 'grid' => array(79, 125, 151)),
-            'pool' => '123456789abcdefghklmnpqrstuvwxyz'
-        );
-
-        $data = create_captcha($values);
-        $this->session->set_userdata('Captch', $data);
-        // print_R($data);die;
-        $dataArray['image'] = $data['image'];
-
-        $this->load->view('contact/index.php', $dataArray);
+        $this->load->view('contact/index.php');
     }
 
-    public function refreshCaptcha()
+    function xssClean($data)
     {
-        $fcpath = str_replace("\\", "/", FCPATH);
-        $this->load->helper('captcha');
-        $values = array(
-            'word' => '', //Generate alternate word by default. You can also set your word.
-            'word_length' => 4, // To set length of captcha word.
-            'img_path' => $fcpath . 'uploads/captcha/', // Create  folder "images" in root directory, and give path.
-            'img_url' => base_url() . 'uploads/captcha/', // To store captcha images in "images" folder.
-            'font_size' => 12,
-            // Font path is used font library, which will stored  in system/fonts/texb.ttf.
-            'font_path' => FCPATH . '/html/fonts/captcha0.ttf', 'img_width' => '120', //Set image width.
-            'img_height' => 30, // Set image height.
-            'expiration' => 60, // This will automatically expire images in given time.
-            'colors' => array('background' => array(69, 141, 213), 'border' => array(69, 141, 213), 'text' => array(255, 255, 255), 'grid' => array(79, 125, 151)),
-            'pool' => '123456789abcdefghklmnpqrstuvwxyz'
-        );
+        // $cleanedData = [];
+ 
+        foreach ($data as $key => $val) {
+            $cleanedData = strip_tags($val);
+            $data[$key] = htmlspecialchars($cleanedData, ENT_QUOTES, 'UTF-8');
+        }
 
-        $data = create_captcha($values);
-        $this->session->unset_userdata('Captch');
-        $this->session->set_userdata('Captch', $data);
-        echo $data['image'];
+        return $data;
     }
 
     public function contact()
     {
-        $data = $this->security->xss_clean($this->input->post());
+        $post = $this->security->xss_clean($this->input->post());
+        $data = $this->xssClean($post);
 
-        // if (xssClean($data)->success == false) {
-        //     echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));
-        //     die;
-        // }
+        $recaptchaSecretKey = "6Lcu0CgoAAAAAEYGZXy1NJCWcssKfHRYwAmZS1gG";
+        $recaptchaResponse = $_POST['g-recaptcha-response']; // The response token sent by the client
 
-        $captcha_word = trim($this->input->post('captcha_word'));
-        $captchaArray = $this->session->userdata('Captch');
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $arr = [
+            'secret' => $recaptchaSecretKey,
+            'response' => $recaptchaResponse,
+        ];
 
-        if (strcmp($captcha_word, $captchaArray['word']) != 0) {
-            echo json_encode(array('statusCode' => 400, 'error' => 'Invalid captcha'));
-            exit;
+        $options = [
+            'http' => [
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($arr),
+            ],
+        ];
+
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $response = json_decode($result);
+
+        if (!$response->success) {
+            echo json_encode(array('statusCode' => 400, 'error' => 'reCAPTCHA verification failed.'));
         }
 
         $rules = array(
@@ -111,8 +88,67 @@ class Contact extends CI_Controller
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == TRUE) {
-            unset($data['captcha_word']);
             $res = $this->model->addData($data);
+            if ($res) {
+                $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
+                echo json_encode(array('statusCode' => 200, 'message' => 'Details Submitted'));
+            } else {
+                echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));
+            }
+        } else {
+            echo json_encode(array('statusCode' => 400, 'error' => validation_errors()));
+        }
+    }
+
+    public function bookNow()
+    {
+        $post = $this->security->xss_clean($this->input->post());
+        // print_r($post);die;
+        
+        $data = $this->xssClean($post);
+// print_r($data);die;
+
+        $rules = array(
+            array(
+                'field' => 'name',
+                'label' => 'First Name',
+                'rules' => 'required|trim|min_length[2]|max_length[20]'
+            ),
+            array(
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'required|trim|valid_email|min_length[2]'
+            ),
+            array(
+                'field' => 'phone',
+                'label' => 'Mobile No.',
+                'rules' => 'required|trim|integer|min_length[10]|max_length[10]'
+            ),
+            array(
+                'field' => 'package',
+                'label' => 'Package',
+                'rules' => 'required|trim|integer'
+            ),
+            array(
+                'field' => 'check_in',
+                'label' => 'Check In date',
+                'rules' => 'required|trim'
+            ),
+            array(
+                'field' => 'check_out',
+                'label' => 'Check Out date',
+                'rules' => 'required|trim'
+            ),
+            array(
+                'field' => 'message',
+                'label' => 'Message',
+                'rules' => 'required|trim|min_length[2]|max_length[100]'
+            )
+        );
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == TRUE) {
+            $res = $this->model->addBookingData($data);
             if ($res) {
                 $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
                 echo json_encode(array('statusCode' => 200, 'message' => 'Details Submitted'));
@@ -142,12 +178,8 @@ class Contact extends CI_Controller
 
     public function subscribe()
     {
-        $data = $this->security->xss_clean($this->input->post());
-
-        // if (xssClean($data)->success == false) {
-        //     echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));
-        //     die;
-        // }
+        $post = $this->security->xss_clean($this->input->post());
+        $data = xssClean($post);
 
         $rules = array(
             array(

@@ -1,6 +1,6 @@
 <?php
 
-class Contact_Model extends CI_Model
+class ContactModel extends CI_Model
 {
     function __construct()
     {
@@ -10,6 +10,11 @@ class Contact_Model extends CI_Model
     public function addData($data)
     {
         return $this->db->insert('contact_details', $data);
+    }
+
+    public function addBookingData($data)
+    {
+        return $this->db->insert('booking_details', $data);
     }
 
     public function visitData($data)
