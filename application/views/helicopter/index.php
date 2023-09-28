@@ -10,17 +10,17 @@
     </section>
 
     <!--==================== ABOUT ====================-->
-    <section class="heli__about heli__section" id="heli__about">
+    <section class="section_second heli__section" id="heli__about">
         <img src="<?= base_url('assets/img/graph.png'); ?>" alt="svg" class="heli__about__svg">
         <div class="warning__text container">
-            <h4><span>WARNING(चेतावनी)</span>: Dev Darshan Yatra is owned by only www.devdarshanyatra.com . We are
+            <h6><span>WARNING(चेतावनी)</span>: Dev Darshan Yatra is owned by only www.devdarshanyatra.com . We are
                 not responsible for any other fake website in the name of Dev Darshan Yatra. Our company has only
                 one current account which is mentioned on the website, apart from this our company is not
-                responsible for any other payment details.</h4>
+                responsible for any other payment details.</h6>
 
-            <h4 class="heli__note__text">
+            <h6 class="heli__note__text">
                 Note: Book helicopter ticket only from government website.
-            </h4>
+            </h6    >
             <hr>
         </div>
         <div class="heli__about__container container grid">

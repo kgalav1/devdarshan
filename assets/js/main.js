@@ -72,6 +72,20 @@ window.addEventListener('scroll', scrollUp)
 // }
 // window.addEventListener('scroll', scrollActive)
 
+$(window).on('load', function () {
+    const currentUrl = window.location.href;
+    const nav_links = document.querySelectorAll('.nav__link');
+    nav_links.forEach(index => {
+        const linkUrl = index.getAttribute('href');
+        if (currentUrl === linkUrl) {
+            index.classList.add('active-link');
+        } else {
+            index.classList.remove('active-link');
+        }
+    });
+});
+
+
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
@@ -135,6 +149,46 @@ var swiper = new Swiper(".swiper", {
         }
     }
 });
+
+
+// const swiper_new = new Swiper('.swiper_new', {
+//     effect: "cards",
+//     perSlideOffset: 8,
+//     perSlideRotate: 2,
+//     rotate: true,
+//     slideShadows: true,
+//     loop: true,
+//     autoplay: {
+//         delay: 2000,
+//     },
+// });
+
+const swiper_new = new Swiper('.swiper_new', {
+    effect: "cards",
+    perSlideOffset: 8,
+    perSlideRotate: 2,
+    rotate: true,
+    slideShadows: true,
+    loop: true,
+    autoplay: {
+        delay: 2000,
+    },
+});
+
+
+// const swiper_new = new Swiper('.swiper_new', {
+//     effect: "coverflow",
+//     depth: 100,
+//     modifier: 2,
+//     rotate: 50,
+//     scale: 1,
+//     slideShadows: true,
+//     stretch: 0,
+//     loop: true,
+//     autoplay: {
+//         delay: 2000,
+//     },
+// });
 
 
 const tl = gsap.timeline();
@@ -220,17 +274,6 @@ function resetValues() {
     })
 }
 
-function refreshCaptcha() {
-    let page = baseURL();
-    $.ajax({
-        url: page + '/refreshCaptcha',
-        type: 'POST',
-        success: function (data) {
-            $('.captcha').empty().html(data);
-        }
-    });
-}
-
 
 function addData(function_name) {
     let url = 'contact/' + function_name;
@@ -248,6 +291,10 @@ function addData(function_name) {
             if (data.statusCode == '200') {
                 notify(data.message, "success");
                 resetValues(function_name);
+
+                if (function_name == 'bookNow') {
+                    $('#bookingModal').modal('hide');
+                }
             } else {
                 notify(data.error, "error");
             }

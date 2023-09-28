@@ -17,8 +17,6 @@ class Contact extends CI_Controller
 
     function xssClean($data)
     {
-        // $cleanedData = [];
- 
         foreach ($data as $key => $val) {
             $cleanedData = strip_tags($val);
             $data[$key] = htmlspecialchars($cleanedData, ENT_QUOTES, 'UTF-8');
@@ -31,31 +29,6 @@ class Contact extends CI_Controller
     {
         $post = $this->security->xss_clean($this->input->post());
         $data = $this->xssClean($post);
-
-        $recaptchaSecretKey = "6Lcu0CgoAAAAAEYGZXy1NJCWcssKfHRYwAmZS1gG";
-        $recaptchaResponse = $_POST['g-recaptcha-response']; // The response token sent by the client
-
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $arr = [
-            'secret' => $recaptchaSecretKey,
-            'response' => $recaptchaResponse,
-        ];
-
-        $options = [
-            'http' => [
-                'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
-                'method' => 'POST',
-                'content' => http_build_query($arr),
-            ],
-        ];
-
-        $context = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-        $response = json_decode($result);
-
-        if (!$response->success) {
-            echo json_encode(array('statusCode' => 400, 'error' => 'reCAPTCHA verification failed.'));
-        }
 
         $rules = array(
             array(
@@ -78,17 +51,39 @@ class Contact extends CI_Controller
                 'label' => 'Mobile No.',
                 'rules' => 'required|trim|integer|min_length[10]|max_length[10]'
             ),
-
             array(
                 'field' => 'message',
                 'label' => 'Message',
                 'rules' => 'required|trim|min_length[2]|max_length[100]'
+            ),
+            array(
+                'field' => 'g-recaptcha-response',
+                'label' => 'Token',
+                'rules' => 'required'
             )
         );
+
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == TRUE) {
+
+            $captcha = $data['g-recaptcha-response'];
+
+            $secret   = '6LcclB8oAAAAAAQxwhyo973fju_XFlJEUXaHn0IP';
+            $response = file_get_contents(
+                "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']
+            );
+            $response = json_decode($response);
+
+            if ($response->success === false) {
+                echo json_encode(array('statusCode' => 400, 'error' => 'reCAPTCHA verification failed.'));
+                return;
+            } else {
+                unset($data['g-recaptcha-response']);
+            }
+
             $res = $this->model->addData($data);
+
             if ($res) {
                 $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
                 echo json_encode(array('statusCode' => 200, 'message' => 'Details Submitted'));
@@ -103,10 +98,8 @@ class Contact extends CI_Controller
     public function bookNow()
     {
         $post = $this->security->xss_clean($this->input->post());
-        // print_r($post);die;
-        
+
         $data = $this->xssClean($post);
-// print_r($data);die;
 
         $rules = array(
             array(
@@ -127,7 +120,7 @@ class Contact extends CI_Controller
             array(
                 'field' => 'package',
                 'label' => 'Package',
-                'rules' => 'required|trim|integer'
+                'rules' => 'required|trim'
             ),
             array(
                 'field' => 'check_in',
@@ -148,6 +141,18 @@ class Contact extends CI_Controller
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == TRUE) {
+
+            $checkin_timestamp = strtotime($data['check_in']);
+            $checkout_timestamp = strtotime($data['check_out']);
+
+            if ($checkin_timestamp > $checkout_timestamp) {
+                echo json_encode(array('statusCode' => 400, 'error' => 'Check-In Date cannot be greater than Check-Out Date.'));
+                return;
+            }
+
+            $data['check_in'] = date_format(date_create($data['check_in']), "Y-m-d");
+            $data['check_out'] = date_format(date_create($data['check_out']), "Y-m-d");
+
             $res = $this->model->addBookingData($data);
             if ($res) {
                 $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
@@ -194,7 +199,7 @@ class Contact extends CI_Controller
         if ($this->form_validation->run() == TRUE) {
             $res = $this->model->visitData($data);
             if ($res) {
-                $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
+                // $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
                 echo json_encode(array('statusCode' => 200, 'message' => 'Subscribe successfully, Please check your email'));
             } else {
                 echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));

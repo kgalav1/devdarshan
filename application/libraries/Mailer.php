@@ -27,7 +27,7 @@
             } 
 
             $this->setMail = new PHPMailer();
-            $this->setMail->SMTPDebug = 4;
+            $this->setMail->SMTPDebug = 0;
             $this->setMail->isSMTP();
             $this->setMail->Host = $mail->email_host;
             $this->setMail->SMTPAuth = true;

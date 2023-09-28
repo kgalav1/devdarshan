@@ -103,68 +103,63 @@
      </div>
  </footer>
 
-
  <!--========== MODAL BOX ==========-->
- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+ <button type="button" class="modal_button" data-bs-toggle="modal" data-bs-target="#bookingModal">
      Book Now
  </button>
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
      <div class="modal-dialog">
          <div class="modal-content" style="border-radius: 0px;">
              <div class="modal-header">
-                 <h2 class="modal-title fs-5 cont_color" id="exampleModalLabel">BOOK YOUR TRIP NOW</h2>
+                 <h2 class="modal-title fs-5 cont_color" id="bookingModalLabel">BOOK YOUR TRIP NOW</h2>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body">
-                 <form class="join__form" id="bookNow">
+                 <form id="bookNow">
                      <input type="hidden" id="setUrl" value="<?php echo base_url('bookNow'); ?>" />
                      <div class="row">
                          <div class="col-md-12 mb-2">
-                             <input type="text" name="name" placeholder="Name*" class="modal__input" maxlength="35" autocomplete="off" required>
+                             <label for="name" class="form-label">Full Name</label>
+                             <input type="text" name="name" placeholder="Enter Your Name" class="form-control-sm" maxlength="35" autocomplete="off" required>
                          </div>
                          <div class="col-md-12 mb-2">
-                             <input type="text" name="phone" placeholder="Mobile*" class="modal__input" maxlength="10" autocomplete="off" required>
+                             <label for="phone" class="form-label">Mobile No.</label>
+                             <input type="text" name="phone" placeholder="Enter Your Mobile" class="form-control-sm" maxlength="10" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
                          </div>
                          <div class="col-md-12 mb-2">
-                             <input type="email" name="email" placeholder="Email*" class="modal__input" maxlength="50" autocomplete="off" required>
+                             <label for="email" class="form-label">Email address</label>
+                             <input type="email" name="email" placeholder="Enter Your Email" class="form-control-sm" maxlength="50" autocomplete="off" required>
                          </div>
                          <div class="col-md-12 mb-2">
-                             <select name="package" class="modal__input">
-                                 <option value="1">Kerala</option>
-                                 <option value="2">Kedarnath</option>
-                                 <option value="3">Tungnath</option>
-                                 <option value="4">Flower Vally</option>
-                                 <option value="5">Uttrakhand</option>
+                             <label for="package" class="form-label">Package</label>
+                             <select name="package" class="form-select form-select-sm">
+                                 <option value="">Select your favourite destination</option>
+                                 <option value="kerala">Kerala</option>
+                                 <option value="kedarnath">Kedarnath</option>
+                                 <option value="tungnath">Tungnath</option>
+                                 <option value="flower_valley">Flower Valley</option>
+                                 <option value="uttrakhand">Uttrakhand</option>
                              </select>
                          </div>
                          <div class="col-md-6 mb-2">
-                             <input type="text" name="check_in" placeholder="Check in date*" class="modal__input datepicker" maxlength="50" autocomplete="off" required>
+                             <label for="check_in" class="form-label">CheckIn Date</label>
+                             <input type="text" name="check_in" placeholder="Check in date" class="form-control-sm datepicker" maxlength="50" autocomplete="off" required>
                          </div>
                          <div class="col-md-6 mb-2">
-                             <input type="text" name="check_out" placeholder="Check out date*" class="modal__input datepicker" maxlength="50" autocomplete="off" required>
+                             <label for="check_out" class="form-label">CheckOut Date</label>
+                             <input type="text" name="check_out" placeholder="Check out date" class="form-control-sm datepicker" maxlength="50" autocomplete="off" required>
                          </div>
                          <div class="col-md-12 mb-2">
-                             <textarea name="message" id="message" cols="30" rows="10" class="modal__input" placeholder="Message" maxlength="200" autocomplete="off" required></textarea>
-                         </div>
-                         <!-- <div class="col-md-6 mb-2">
-                             <div class="g-recaptcha" data-sitekey="6Lcu0CgoAAAAAFHEyzottNTREA6xlJELFSlSfKhT"></div>
-                         </div> -->
-                         <div class="col-md-6 mb-2">
-                             <button class="modal_button float-end" type="button" id="submit" onclick="addData('bookNow')">
-                                 Submit <i class="ri-arrow-right-line"></i>
-                             </button>
+                             <label for="message" class="form-label">Message</label>
+                             <textarea name="message" id="message" cols="30" rows="5" class="form-control-sm" placeholder="Message" maxlength="200" autocomplete="off" required></textarea>
                          </div>
                      </div>
-                 </form>
              </div>
              <div class="modal-footer">
-                 <button class="modal_button float-end" type="button" data-bs-dismiss="modal">
-                     Close</i>
-                 </button>
-                 <button class="modal_button float-end" type="button">
-                     Book Now</i>
-                 </button>
+                 <button class="btn btn-primary btn-sm" type="button" id="submit" onclick="addData('bookNow')"><i class="ri-check-line"></i> Book Now</button>
+                 <button class="btn btn-danger btn-sm" type="button" data-bs-dismiss="modal"><i class="ri-close-line"></i> Close</button>
              </div>
+             </form>
          </div>
      </div>
  </div>
@@ -183,7 +178,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
  <script src="<?= base_url('assets/js/swiper.js'); ?>"></script>
  <script src="<?= base_url('assets/js/scrollreveal.min.js'); ?>"></script>
- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ <script src="https://www.google.com/recaptcha/api.js?render=6LcclB8oAAAAAFrK2Xtjx31JFbqCmy0s941Vg3LK"></script>
  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
  <!--=============== MAIN JS ===============-->
@@ -191,7 +186,19 @@
 
  <script>
      $(function() {
-         $(".datepicker").datepicker();
+         $(".datepicker").datepicker({
+             dateFormat: "dd-mm-yy"
+         });
+
+     });
+
+     grecaptcha.ready(function() {
+         grecaptcha.execute('6LcclB8oAAAAAFrK2Xtjx31JFbqCmy0s941Vg3LK', {
+                 action: 'validate_captcha'
+             })
+             .then(function(token) {
+                 document.getElementById('g-recaptcha-response').value = token;
+             });
      });
  </script>
  </body>

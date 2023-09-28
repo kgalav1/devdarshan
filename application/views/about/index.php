@@ -14,7 +14,7 @@
     </section>
 
     <!--==================== ABOUT ====================-->
-    <section class="heli__about heli__section" id="heli__about">
+    <section class="about__us heli__section" id="about__us">
         <div class="aboutus__container container grid">
 
             <div class="about__image">
@@ -25,7 +25,7 @@
             <div class="about__data">
 
                 <p class="about__description">
-                    <span style="color:white; font-size:15px;">We promise an excellent quality and state-of-art services to our clients for which we always keep transparency of every things. We are very familiar with the art of living, culture, heritage, pilgrimage and religion of Uttarakhand. The directors of the Dev Darshan Yatra, the planner and staffs are fully experienced to match the requisites of catering to our clients that demands the very best and we promise to deliver the same at any cost.</span>
+                    <span style="color:white; font-size:14px;">We promise excellent quality and state-of-art services to our clients for which we always keep the transparency of everything. We are very familiar with Uttarakhand's art of living, culture, heritage, pilgrimage, and religion. The directors of the Dev Darshan Yatra, the planner, and the staff are fully experienced in matching the requisites of catering to our clients that demand the very best and we promise to deliver the same at any cost. We have branches in Delhi, Goa, Haridwar, Dehradun, Katra, and Rishikesh and thus we are called one of the leading travel companies/agencies in India. We provide Chardham Yatra Package Tours and Chardham Helicopter Services etc. As a client, you can be 100% assured of luxury and comfort in our Chardham Yatra Packages at a very reasonable and affordable price.</span>
                 </p>
 
             </div>
@@ -99,28 +99,28 @@
                     <h1 class="count1">1000</h1>
                     <h1>+</h1>
                 </div>
-                <p>Peoples Travel</p>
+                <span>Peoples Travel</span>
             </div>
             <div class="trips numeric__data">
                 <div class="count__data">
                     <h1 class="count2">50</h1>
                     <h1>+</h1>
                 </div>
-                <p>Trips Placed</p>
+                <span>Trips Placed</span>
             </div>
             <div class="places numeric__data">
                 <div class="count__data">
                     <h1 class="count3">15</h1>
                     <h1>+</h1>
                 </div>
-                <p>Places Visited</p>
+                <span>Places Visited</span>
             </div>
             <div class="reviews numeric__data">
                 <div class="count__data">
                     <h1 class="count4">999</h1>
                     <h1>+</h1>
                 </div>
-                <p>Reviews Achevied</p>
+                <span>Reviews Achevied</span>
             </div>
         </div>
     </section>
@@ -131,27 +131,43 @@
         <div class="warning__text container">
             <h2 class="underline">WHY CHOOSE US ?</h2>
         </div>
-        <div class="aboutus__container grid">
-            <div class="about__data">
-                <h2 class="section__title">
-                    WELCOME TO <br>
-                    <small class="small"> DEV DARSHAN YATRA </small>
-                </h2>
-
-                <p class="about__description">
-                    Dev Darshan Travels, your dedicated partner in crafting unforgettable journeys. <br>
-                    Dev Darshan Yatra stands as a beacon of convenience, offering a one-stop platform for all Chardham
-                    Yatra packages in the enchanting realm of Uttarakhand. At Dev Darshan Travels, our journey is to create
-                    enriching memories that linger long after the adventure ends.
-                </p>
-
-                <a href="#" class="button">Explore Travel <i class="ri-arrow-right-line"></i></a>
-            </div>
-
-            <div class="about__image">
-                <img src="<?= base_url('assets/img/about-beach.jpg'); ?>" alt="about image" class="about__img">
-                <div class="about__shadow">
-
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-md-5 d-flex justify-content-center align-items-baseline flex-md-column">
+                    <div><span>Reasons of our success</span> </div>
+                    <div>
+                        <h2 style="border-bottom: 1px solid crimson; width:fit-content">WHY CHOOSE US ?</h2>
+                    </div>
+                    <div>
+                        <p> Our first priority is to provide the best services to our clientele. To become one of the favored selections of our customers, we are working in a keen way. Owing to our quality services assured assortment to budget-friendly rates and keep everythings transparent with the clients, we have been applauded in the domain.</p>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-6 choose__points">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class="ri-trophy-fill"></i>
+                            <h6> TRANSPARENT SERVICES </h6>
+                            <p>We keep everythings transparent with the clients and give the same as we said.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="ri-money-pound-circle-fill"></i>
+                            <h6>AFFORDABLE PRICE</h6>
+                            <p>The cost of our Services are so affordable that fits your budget very nicely.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class="ri-user-3-fill"></i>
+                            <h6>CUSTOMER SATISFACTION</h6>
+                            <p>Our first motive is to provide 100% satisfaction to our clients with our sevices.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="ri-truck-fill"></i>
+                            <h6>VARIOUS PACKAGES</h6>
+                            <p>We have a wide packages of tour so you can select any one according to your needs.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
