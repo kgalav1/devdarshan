@@ -1255,12 +1255,12 @@ img {
   background-color: rgb(199, 199, 199);
   border-radius: 8px;
   width: 100% !important;
-  height: 300px;
+  height: 400px;
 }
 
 .package_slides>img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   object-position: center;
 }
@@ -1268,6 +1268,7 @@ img {
 .little__info>h3 {
   color: rgb(167, 221, 243);
   position: relative;
+  margin: 30px 0 100px 0;
 }
 
 .little__info h3::after {
@@ -1280,18 +1281,53 @@ img {
   left: 35%;
 }
 
-.price-card {
+.packages_heading_text {
   position: relative;
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
-  border: 1px solid grey;
 }
 
-/* .price-card-img > img {
-  max-width: 100%;
-  max-height: 100%;
-} */
+.packages_heading_text h3::after {
+  content: "";
+  width: 30%;
+  height: 0;
+  border-bottom: 2px solid crimson;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.plans__list__head h3::after {
+  content: "";
+  width: 13%;
+  height: 0;
+  border-bottom: 2px solid crimson;
+  position: absolute;
+  bottom: -10px;
+  left: 36%;
+}
+
+.hiw_container_head h3::after {
+  content: "";
+  width: 11%;
+  height: 0;
+  border-bottom: 2px solid crimson;
+  position: absolute;
+  bottom: -10px;
+  left: 26.5%;
+}
+
+.hiw_container_head {
+  position: relative;
+}
+
+.price-card {
+  position: relative;
+  width: 90%;
+  max-height: 250px;
+  overflow: hidden;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+}
 
 .ri-star-fill,
 .ri-star-half-line {
@@ -1302,12 +1338,13 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1.25rem 1rem;
+  padding: 1rem 1.25rem;
   overflow: hidden;
   text-transform: uppercase;
   background: transparent;
   z-index: 1;
   color: black;
+  font-size: 13px;
 }
 
 .rate::after {
@@ -1323,4 +1360,105 @@ img {
   will-change: transform;
   pointer-events: none;
   z-index: -1;
+}
+
+.points>p>span {
+  font-size: 13px;
+}
+
+.points>p {
+  margin-bottom: 0px;
+}
+
+.plans__list {
+  margin: 150px 0 40px 0;
+  position: relative;
+}
+
+.location-names-div {
+  box-shadow: -4px -4px 16px rgb(139 62 234 / 8%), 4px 14px 28px rgba(13, 13, 14, 0.918);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  border-radius: 3px;
+}
+
+.location-names {
+  width: fit-content;
+  padding: 10px 20px;
+  border: 1px solid crimson;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.location-names.active {
+  background-color: crimson;
+  color: white;
+}
+
+.package-info {
+  font-size: 13px;
+}
+
+.book-now>button {
+  padding: 0.5rem 0.8rem;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.hiw {
+  width: 180px;
+  margin-bottom: 20px;
+  height: 160px;
+}
+
+.hiw_line {
+  position: absolute;
+  top: 35%;
+  z-index: -1;
+}
+
+.hiw_text>p{
+  font-size: 14px;
+}
+
+.grid-container{
+  width: 100vw;
+  margin: auto;
+}
+
+#photos {
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 20px;
+  -moz-column-count: 5;
+  -moz-column-gap: 20px;
+  column-count: 5;
+  column-gap: 20px;
+}
+
+#photos img {
+  width: 100%;
+  height: auto !important;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 980px) {
+  #photos {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  #photos {
+    column-count: 1;
+  }
 }

@@ -85,6 +85,30 @@ $(window).on('load', function () {
     });
 });
 
+$('.location-names').click(function () {
+    const names = document.querySelectorAll('.location-names');
+    names.forEach(index => {
+        this.classList.add('active');
+        index.classList.remove('active');
+    });
+    let dataName = $(this).attr('data-name');
+    $.ajax({
+        type: 'POST',
+        url: 'packagedetails/getPackageList',
+        data: {
+            location: dataName
+        },
+        dataType: 'JSON',
+        success: function (data) {
+            if (data) {
+                $("#price-card-body").empty().html(data.view);
+                const sr = ScrollReveal();
+                sr.reveal(`.price-card`, { distance: '1000px', interval: 5, origin: 'right', duration: 1000 })
+            }
+        }
+    });
+});
+
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
@@ -101,8 +125,9 @@ sr.reveal(`.home__data, .explore__data, .explore__user, .footer__container`);
 // sr.reveal(`.home__card`, { delay: 600, distance: '100px', interval: 100 });
 sr.reveal(`.about__data, .join__image`, { origin: 'right' });
 sr.reveal(`.about__image, .join__data`, { origin: 'left' });
-sr.reveal(`.popular__card`, { interval: 200 });
+sr.reveal(`.popular__card`, { interval: 100, delay: 10, duration:1000 });
 
+sr.reveal(`.price-card`, { delay: 50, distance: '1000px', interval: 50, origin: 'right' });
 
 
 /*=============== SWIPER HORIZONTAL SCROLL ANIMATION ===============*/
