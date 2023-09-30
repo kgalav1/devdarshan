@@ -34,7 +34,7 @@
                         <span>Affordable Price</span>
                     </div>
                     <div class="book-now mt-3">
-                        <button class="join__button button" type="button">
+                        <button class="join__button button" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal">
                             BOOK NOW <i class="ri-arrow-right-line"></i>
                         </button>
                     </div>

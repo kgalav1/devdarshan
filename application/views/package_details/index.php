@@ -16,7 +16,7 @@
             <div class="row mt-5">
                 <div class="col-md-7 d-flex align-items-baseline flex-column">
                     <div class="packages_heading_text">
-                        <h3>BHEL RESIDENCY - <span style="color: crimson;">UTTARAKHAND</span> </h3>
+                        <h3>BHEL Hospitality - <span style="color: crimson;">UTTARAKHAND</span> </h3>
                     </div>
                     <div class="mt-3">
                         <p style="font-size: 15px;">Along with coffee/tea in a common area, this aparthotel has 24-hour room service and free valet parking. Free WiFi in public areas and a free manager's reception are also provided. The apartment boasts a fireplace and offers free WiFi and a kitchen. Comforts include premium bedding and a down comforter, and guests will also find conveniences, such as a sofa bed and a dining area.This Ahmedabad aparthotel provides complimentary wireless Internet access. Business-friendly amenities include desks, complimentary newspapers and telephones. Additionally, rooms include coffee/tea makers and an iron/ironing board. Housekeeping is provided on a daily basis.</p>
@@ -105,7 +105,7 @@
                                             <span>Affordable Price</span>
                                         </div>
                                         <div class="book-now mt-3">
-                                            <button class="join__button button" type="button">
+                                            <button class="join__button button" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal">
                                                 BOOK NOW <i class="ri-arrow-right-line"></i>
                                             </button>
                                         </div>
@@ -155,7 +155,7 @@
         </div>
     </section>
 
-    <section class="container-fluid fourth_container">
+    <section class="container-fluid fourth_container mb-4">
         <div class="grid-container">
             <div class="gallery" id="photos">
                 <img src="https://source.unsplash.com/random/?uttarakhand">
@@ -178,3 +178,6 @@
     </section>
 </main>
 <?php $this->load->view('includes/footer'); ?>
+</body>
+
+</html>

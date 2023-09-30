@@ -13,8 +13,8 @@
     <section class="section_second heli__section" id="heli__about">
         <img src="<?= base_url('assets/img/graph.png'); ?>" alt="svg" class="heli__about__svg">
         <div class="warning__text container">
-            <h6><span>WARNING(चेतावनी)</span>: Dev Darshan Yatra is owned by only www.devdarshanyatra.com . We are
-                not responsible for any other fake website in the name of Dev Darshan Yatra. Our company has only
+            <h6><span>WARNING(चेतावनी)</span>: BEHL Hospitality is owned by only www.behlhospitality.com . We are
+                not responsible for any other fake website in the name of BEHL Hospitality. Our company has only
                 one current account which is mentioned on the website, apart from this our company is not
                 responsible for any other payment details.</h6>
 
@@ -27,12 +27,12 @@
             <div class="about__data">
                 <h2 class="heli__section__title">
                     Organization -
-                    <small class="small"> Dev Darshan Yatra </small>
+                    <small class="small"> BEHL Hospitality </small>
                 </h2>
 
                 <p class="about__description">
                     Bank Branch Address- C-61,Preet Vihar Vikas Marg, New Delhi – 110092 <br>
-                    Website URL – http://www.devdarshanyatra.com/ <br>
+                    Website URL – http://www.behlhospitality.com <br>
                     Bank Name – IndusInd Bank <br>
                     Account No – 201002943849 <br>
                     Account Type – Current Account <br>
@@ -52,3 +52,6 @@
     </section>
 </main>
 <?php $this->load->view('includes/footer'); ?>
+</body>
+
+</html>

@@ -7,7 +7,7 @@ class Contact extends CI_Controller
     {
         parent::__construct();
         $this->load->model("ContactModel", "model");
-        // $this->load->model("user_agent");
+        $this->load->library('user_agent');
     }
 
     public function index()
@@ -85,7 +85,8 @@ class Contact extends CI_Controller
             $res = $this->model->addData($data);
 
             if ($res) {
-                $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
+                $msg = $this->model->getEmailContent('contact_us', $data);
+                $this->mailer->sendEmail($data['email'], 'Thank You for Contacting BEHL Hospitality', $msg);
                 echo json_encode(array('statusCode' => 200, 'message' => 'Details Submitted'));
             } else {
                 echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));
@@ -155,7 +156,8 @@ class Contact extends CI_Controller
 
             $res = $this->model->addBookingData($data);
             if ($res) {
-                $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
+                $msg = $this->model->getEmailContent('booking', $data);
+                $this->mailer->sendEmail($data['email'], 'Booking Confirmation for Your ' . ucfirst($data['package']) . ' Adventure', $msg);
                 echo json_encode(array('statusCode' => 200, 'message' => 'Details Submitted'));
             } else {
                 echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));
@@ -184,7 +186,8 @@ class Contact extends CI_Controller
     public function subscribe()
     {
         $post = $this->security->xss_clean($this->input->post());
-        $data = xssClean($post);
+
+        $data = $this->xssClean($post);
 
         $rules = array(
             array(
@@ -197,9 +200,13 @@ class Contact extends CI_Controller
         $this->form_validation->set_rules($rules);
 
         if ($this->form_validation->run() == TRUE) {
-            $res = $this->model->visitData($data);
+            $res = $this->model->subscribe($data);
+            $this->model->getEmailContent('subscribe');
+
             if ($res) {
-                // $this->mailer->sendEmail($data['email'], 'Devdarshan', 'Welcome to Devdarshan');
+                $msg = $this->model->getEmailContent('booking', $data);
+                $this->mailer->sendEmail($data['email'], 'BEHL Hospitality', $msg);
+
                 echo json_encode(array('statusCode' => 200, 'message' => 'Subscribe successfully, Please check your email'));
             } else {
                 echo json_encode(array('statusCode' => 400, 'error' => 'Something goes wrong'));

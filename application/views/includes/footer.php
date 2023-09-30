@@ -4,7 +4,7 @@
      <div class="footer__container container grid">
          <div class="footer__content grid">
              <div>
-                 <a href="#" class="footer__logo">Travel</a>
+                 <a href="#" class="footer__logo">BEHL HOSPITALITY</a>
 
                  <p class="footer__description">
                      Travel with us and explore <br>
@@ -191,16 +191,4 @@
          });
 
      });
-
-     grecaptcha.ready(function() {
-         grecaptcha.execute('6LcclB8oAAAAAFrK2Xtjx31JFbqCmy0s941Vg3LK', {
-                 action: 'validate_captcha'
-             })
-             .then(function(token) {
-                 document.getElementById('g-recaptcha-response').value = token;
-             });
-     });
  </script>
- </body>
-
- </html>

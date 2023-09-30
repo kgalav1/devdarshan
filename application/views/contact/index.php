@@ -60,7 +60,7 @@
                 </div>
                 <div class="intouch__email intouch__icon">
                     <img src="<?= base_url('assets/img/mail.png'); ?>" alt="email" class="contact__icon">
-                    <span>devdarshan@sansoftwares.com</span>
+                    <span>behlhopitality@support.com</span>
                 </div>
                 <div class="intouch__address intouch__icon">
                     <img src="<?= base_url('assets/img/location.png'); ?>" alt="location" class="contact__icon">
@@ -71,3 +71,18 @@
     </section>
 </main>
 <?php $this->load->view('includes/footer'); ?>
+
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LcclB8oAAAAAFrK2Xtjx31JFbqCmy0s941Vg3LK', {
+                action: 'validate_captcha'
+            })
+            .then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+    });
+</script>
+
+</body>
+
+</html>

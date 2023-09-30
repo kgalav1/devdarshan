@@ -9,12 +9,12 @@
         <div class="home__container">
             <div class="home__data">
                 <h3 class="home__subtitle">
-                    Welcome To TravelBuddy
+                    Welcome To BEHL Hospitality
                 </h3>
 
                 <h1 class="home__title">
                     Explore <br>
-                    The India
+                    The Uttarakhand
                 </h1>
 
                 <p class="home__description">
@@ -111,13 +111,13 @@
             <div class="about__data">
                 <h2 class="section__title">
                     WELCOME TO <br>
-                    <small class="small"> DEV DARSHAN YATRA </small>
+                    <small class="small">BEHL HOSPITALITY</small>
                 </h2>
 
                 <p class="about__description">
-                    Dev Darshan Travels, your dedicated partner in crafting unforgettable journeys. <br>
-                    Dev Darshan Yatra stands as a beacon of convenience, offering a one-stop platform for all Chardham
-                    Yatra packages in the enchanting realm of Uttarakhand. At Dev Darshan Travels, our journey is to create
+                    BEHL Hospitality, your dedicated partner in crafting unforgettable journeys. <br>
+                    BEHL Hospitality stands as a beacon of convenience, offering a one-stop platform for all Chardham
+                    Yatra packages in the enchanting realm of Uttarakhand. At BEHL Hospitality, our journey is to create
                     enriching memories that linger long after the adventure ends.
                 </p>
 
@@ -261,8 +261,7 @@
     });
 
     function visitData() {
-        let base_url = baseURL();
-        let url = base_url + '/visit';
+        let url = 'contact/visit';
         $.ajax({
             type: 'POST',
             url: url,
@@ -276,3 +275,7 @@
         });
     }
 </script>
+
+</body>
+
+</html>

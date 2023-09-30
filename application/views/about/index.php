@@ -3,33 +3,37 @@
     <!--==================== HOME ====================-->
     <section class="heli__home section" id="helicopter">
         <img src="assets/img/aboutus-bg.jpg" alt="about image" class="heli__home__bgImg">
-        <img src="<?= base_url('assets/img/about.jpg'); ?>" alt="about image" class="about__head__img">
         <div class="heli__home__bg">
             <h2 class="heli__home__title">About Us</h2>
             <p>Home > About</p>
         </div>
-        <div class="about__main__text">
-            Dev Darshan Yatra Travels helps you to plan your trips and provides all the information of the destinations in economical way with wide selection of our various packages which makes your tour easy & happy. We remain committed to our mission of “ creating happy travelers ”.
-        </div>
     </section>
 
     <!--==================== ABOUT ====================-->
-    <section class="about__us heli__section" id="about__us">
-        <div class="aboutus__container container grid">
-
-            <div class="about__image">
-                <img src="<?= base_url('assets/img/about2.jpg'); ?>" alt="about image" class="about_us__img">
-                <div class="about__shadow"></div>
+    <section class="about__us heli__section container section_second" id="about__us">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6">
+                <div class="about_images position-relative">
+                    <div class="about_image-1">
+                        <span>12+ years of experiences</span>
+                    </div>
+                    <div class="about_image-2">
+                        <img src="<?= base_url('assets/img/about-us.jpg'); ?>" alt="aboutus" class="about_image_main">
+                    </div>
+                </div>
             </div>
-
-            <div class="about__data">
-
-                <p class="about__description">
-                    <span style="color:white; font-size:14px;">We promise excellent quality and state-of-art services to our clients for which we always keep the transparency of everything. We are very familiar with Uttarakhand's art of living, culture, heritage, pilgrimage, and religion. The directors of the Dev Darshan Yatra, the planner, and the staff are fully experienced in matching the requisites of catering to our clients that demand the very best and we promise to deliver the same at any cost. We have branches in Delhi, Goa, Haridwar, Dehradun, Katra, and Rishikesh and thus we are called one of the leading travel companies/agencies in India. We provide Chardham Yatra Package Tours and Chardham Helicopter Services etc. As a client, you can be 100% assured of luxury and comfort in our Chardham Yatra Packages at a very reasonable and affordable price.</span>
-                </p>
-
+            <div class="col-md-6 about_text">
+                <h5 style="color: #127384;">ABOUT OUR COMPANY</h5>
+                <h3 class="position-relative">Best Solution For <span style="color: crimson;">Travel Services</span></h3>
+                <p>Welcome to BEHL Hospitality+, where travel dreams come to life. We are passionate about exploration, adventure, and creating unforgettable memories for travelers just like you. Our journey began with a simple belief: that travel has the power to transform lives.</p>
+                <p>Founded in 2012, BEHL Hospitality was born out of a deep love for travel and a desire to share the beauty of the world with others. What started as a small team of explorers has grown into a dedicated family of travel enthusiasts who are committed to crafting exceptional travel experiences.</p>
+                <div class="row about_points">
+                    <div class="col-md-6"><i class="ri-checkbox-circle-fill"></i> <span>Expertise</span></div>
+                    <div class="col-md-6"><i class="ri-checkbox-circle-fill"></i> <span>Personalized Service</span></div>
+                    <div class="col-md-6"><i class="ri-checkbox-circle-fill"></i> <span>Safety and Comfort</span></div>
+                    <div class="col-md-6"><i class="ri-checkbox-circle-fill"></i> <span>Sustainability</span></div>
+                </div>
             </div>
-
         </div>
     </section>
 
@@ -38,18 +42,18 @@
     <section class="popular" id="popular">
         <div class="about__attorney">
             <div class="about__attorney__text">
-                <h2>Let's Meet Our Attorney</h2>
+                <h2 class="position-relative">Let's Meet Our <span style="color: crimson;">Attorney</span></h2>
                 <p> Your Trusted Legal Advisor, Ready to Advocate for You with Expertise and Dedication. <br>Legal Solutions Await.</p>
             </div>
             <div class="popular__container container grid">
                 <article class="popular__card">
                     <div class="popular__image">
-                        <img src="<?= base_url('assets/img/attorney1.jpg'); ?>" alt="popular image" class="attorney__img">
+                        <img src="<?= base_url('assets/img/attorney1.webp'); ?>" alt="popular image" class="attorney__img">
                         <div class="popular__shadow"></div>
                     </div>
 
                     <h2 class="popular__title">
-                        John Wick
+                        Ellay Cristona
                     </h2>
 
                     <div class="popular__location">
@@ -59,7 +63,7 @@
 
                 <article class="popular__card">
                     <div class="popular__image">
-                        <img src="<?= base_url('assets/img/attorney2.jpg'); ?>" alt="popular image" class="attorney__img">
+                        <img src="<?= base_url('assets/img/attorney2.webp'); ?>" alt="popular image" class="attorney__img">
                         <div class="popular__shadow"></div>
                     </div>
 
@@ -74,12 +78,12 @@
 
                 <article class="popular__card">
                     <div class="popular__image">
-                        <img src="<?= base_url('assets/img/attorney3.jpg'); ?>" alt="popular image" class="attorney__img">
+                        <img src="<?= base_url('assets/img/attorney3.webp'); ?>" alt="popular image" class="attorney__img">
                         <div class="popular__shadow"></div>
                     </div>
 
                     <h2 class="popular__title">
-                        Rio Hosle
+                        Nayrobi Malkova
                     </h2>
 
                     <div class="popular__location">
@@ -92,44 +96,50 @@
 
     <!--==================== ABOUT ====================-->
 
-    <section class="about__numericData" id="about__numericData">
-        <div class="parent__about__numericData">
-            <div class="clients numeric__data">
+    <section class="about__numericData mt-5 mb-5" id="about__numericData">
+
+        <div class="parent__about__numericData row">
+            <div class="numericdata_heading col-md-12 mb-3">
+                <h2 class="position-relative">Facts By The <span style="color: crimson;">Numbers</span></h2>
+                <p class="text-center">Over delighted travelers have shared their glowing reviews, <br>a testament to our commitment to excellence in service and unforgettable experiences.</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="clients numeric__data col-md-2">
                 <div class="count__data">
                     <h1 class="count1">1000</h1>
                     <h1>+</h1>
                 </div>
                 <span>Peoples Travel</span>
             </div>
-            <div class="trips numeric__data">
+            <div class="trips numeric__data col-md-2">
                 <div class="count__data">
                     <h1 class="count2">50</h1>
                     <h1>+</h1>
                 </div>
                 <span>Trips Placed</span>
             </div>
-            <div class="places numeric__data">
+            <div class="places numeric__data col-md-2">
                 <div class="count__data">
                     <h1 class="count3">15</h1>
                     <h1>+</h1>
                 </div>
                 <span>Places Visited</span>
             </div>
-            <div class="reviews numeric__data">
+            <div class="reviews numeric__data col-md-2">
                 <div class="count__data">
                     <h1 class="count4">999</h1>
                     <h1>+</h1>
                 </div>
                 <span>Reviews Achevied</span>
             </div>
+            <div class="col-md-2"></div>
         </div>
     </section>
 
     <!--==================== WHY CHOOSE US ====================-->
     <section class="choose" id="choose">
-        <!-- <div class="choose__parent"> -->
         <div class="warning__text container">
-            <h2 class="underline">WHY CHOOSE US ?</h2>
+            <h2 class="position-relative">WHY CHOOSE <span style="color: crimson;">US ?</span></h2>
         </div>
         <div class="container mb-5">
             <div class="row">
@@ -171,8 +181,53 @@
                 </div>
             </div>
         </div>
-        <!-- </div> -->
+    </section>
+
+    <!--==================== WHY CHOOSE US ====================-->
+    <section class="testimonials">
+        <div class="row">
+            <div class="col-md-12 testimonials_heading mb-4">
+                <p style="color: #127384; margin-bottom: 2px;" class="text-center"><b>What People Say</b></p>
+                <h2 class="position-relative text-center">Testimonials</h2>
+            </div>
+            <div class="testimonial_box_parent">
+                <div class="col-md-3 testimonial_box">
+                    <div class="row">
+                        <div class="col-md-2 quotes_icon_div"><span><i class="ri-double-quotes-l quotes_icon"></i></span></div>
+                        <div class="col-md-10"><p class="quote">Thank you for making it so easy. I really love the way I can view the itinerary and put payment info on the same page and much more!</p></div>
+                        <div class="col-md-5 mt-3"><img src="<?= base_url('assets/img/attorney1.webp'); ?>" alt="testimonial" class="testimonial_img"></div>
+                        <div class="col-md-7 mt-3">
+                            <p><b>Steven Butler</b><br><small><i>regular customer</i></small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 testimonial_box">
+                    <div class="row">
+                        <div class="col-md-2 quotes_icon_div"><span><i class="ri-double-quotes-l quotes_icon"></i></span></div>
+                        <div class="col-md-10"><p class="quote">I am so impressed that you would do such a thing as lower my ticket price when the fare dropped, even when I've already paid for it.</p></div>
+                        <div class="col-md-5 mt-3"><img src="<?= base_url('assets/img/attorney3.webp'); ?>" alt="testimonial" class="testimonial_img"></div>
+                        <div class="col-md-7 mt-3">
+                            <p><b>Steven Butler</b><br><small><i>regular customer</i></small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 testimonial_box">
+                    <div class="row">
+                        <div class="col-md-2 quotes_icon_div"><span><i class="ri-double-quotes-l quotes_icon"></i></span></div>
+                        <div class="col-md-10"><p class="quote">I found your web site very easy to use. The entire process was very quick, and the price of my ticket was very affordable.</p></div>
+                        <div class="col-md-5 mt-3"><img src="<?= base_url('assets/img/attorney2.webp'); ?>" alt="testimonial" class="testimonial_img"></div>
+                        <div class="col-md-7 mt-3">
+                            <p><b>Steven Butler</b><br><i><small>regular customer</small></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 </main>
 <?php $this->load->view('includes/footer'); ?>
+
+</body>
+
+</html>
