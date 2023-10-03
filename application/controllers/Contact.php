@@ -204,7 +204,7 @@ class Contact extends CI_Controller
             $this->model->getEmailContent('subscribe');
 
             if ($res) {
-                $msg = $this->model->getEmailContent('booking', $data);
+                $msg = $this->model->getEmailContent('subscribe');
                 $this->mailer->sendEmail($data['email'], 'BEHL Hospitality', $msg);
 
                 echo json_encode(array('statusCode' => 200, 'message' => 'Subscribe successfully, Please check your email'));

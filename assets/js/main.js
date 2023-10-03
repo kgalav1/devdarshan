@@ -128,6 +128,8 @@ sr.reveal(`.about__image, .join__data`, { origin: 'left' });
 sr.reveal(`.popular__card`, { interval: 100, delay: 10, duration:1000 });
 
 sr.reveal(`.price-card`, { delay: 50, distance: '1000px', interval: 50, origin: 'right' });
+sr.reveal(`.accordian-header`, { delay: 50, distance: '1000px', interval: 50, origin: 'right' });
+sr.reveal(`.contact_details_box`, { delay: 50, distance: '100px', interval: 50, origin: 'top' });
 
 
 /*=============== SWIPER HORIZONTAL SCROLL ANIMATION ===============*/
@@ -167,7 +169,7 @@ var swiper = new Swiper(".swiper", {
             slidesPerView: 1
         },
         1024: {
-            slidesPerView: 3
+            slidesPerView: 4
         },
         1600: {
             slidesPerView: 4

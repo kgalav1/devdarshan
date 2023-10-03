@@ -16,7 +16,7 @@
             <div class="row mt-5">
                 <div class="col-md-7 d-flex align-items-baseline flex-column">
                     <div class="packages_heading_text">
-                        <h3>BHEL Hospitality - <span style="color: crimson;">UTTARAKHAND</span> </h3>
+                        <h3>BHEL Hospitality - <span class="crimson">UTTARAKHAND</span> </h3>
                     </div>
                     <div class="mt-3">
                         <p style="font-size: 15px;">Along with coffee/tea in a common area, this aparthotel has 24-hour room service and free valet parking. Free WiFi in public areas and a free manager's reception are also provided. The apartment boasts a fireplace and offers free WiFi and a kitchen. Comforts include premium bedding and a down comforter, and guests will also find conveniences, such as a sofa bed and a dining area.This Ahmedabad aparthotel provides complimentary wireless Internet access. Business-friendly amenities include desks, complimentary newspapers and telephones. Additionally, rooms include coffee/tea makers and an iron/ironing board. Housekeeping is provided on a daily basis.</p>
@@ -55,10 +55,10 @@
             <div class="row">
                 <div class="col-md-12 mb-5">
                     <div class="plans__list__head text-center position-relative">
-                        <h3>Explore Our <span style="color: crimson;">Locations</span></h3>
+                        <h3>Explore Our <span class="crimson">Locations</span></h3>
                     </div>
                 </div>
-                <div class="col-md-12 mb-5">
+                <div class="col-md-12 col-sm-12 col-xs-12 mb-5">
                     <div class="location-names-div">
                         <div class="location-names active" data-name="uttarakhand">uttrakhand</div>
                         <div class="location-names" data-name="rajasthan">Rajasthan</div>
@@ -127,7 +127,7 @@
         <div class="hiw_container position-relative">
             <img src="<?= base_url('assets/img/package/hiw-line.svg'); ?>" alt="line" class="hiw_line">
             <div class="text-center mb-5 hiw_container_head">
-                <h3>How it work - <span style="color: crimson;">Keep calm & travel on</span></h3>
+                <h3>How it work - <span class="crimson">Keep calm & travel on</span></h3>
             </div>
             <div class="row">
                 <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">

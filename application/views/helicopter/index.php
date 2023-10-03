@@ -27,7 +27,7 @@
             <div class="about__data">
                 <h2 class="heli__section__title">
                     Organization -
-                    <small class="small"> BEHL Hospitality </small>
+                    <small class="crimson"> BEHL Hospitality </small>
                 </h2>
 
                 <p class="about__description">

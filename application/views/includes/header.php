@@ -25,7 +25,7 @@
    <header class="header" id="header">
       <nav class="nav container">
          <a href="#" class="nav__logo">
-            BEHL HOPITALITY
+            BEHL HOSPITALITY
          </a>
          <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">

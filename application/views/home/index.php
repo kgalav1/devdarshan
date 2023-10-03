@@ -8,13 +8,13 @@
 
         <div class="home__container">
             <div class="home__data">
-                <h3 class="home__subtitle">
-                    Welcome To BEHL Hospitality
+                <h3 class="home__subtitle position-relative">
+                    Welcome To <span class="crimson"> BEHL Hospitality</span>
                 </h3>
 
                 <h1 class="home__title">
-                    Explore <br>
-                    The Uttarakhand
+                    Explore The <br>
+                    Uttarakhand
                 </h1>
 
                 <p class="home__description">
@@ -22,7 +22,7 @@
                     your trip now.
                 </p>
 
-                <a href="#" class="button">
+                <a href="<?= base_url('packagedetails'); ?>" class="button">
                     Start Your Journey <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
@@ -108,10 +108,10 @@
     <!--==================== ABOUT ====================-->
     <section class="about section" id="about">
         <div class="about__container container grid">
-            <div class="about__data">
-                <h2 class="section__title">
+            <div class="about__data home_about_data">
+                <h2 class="section__title position-relative">
                     WELCOME TO <br>
-                    <small class="small">BEHL HOSPITALITY</small>
+                    <small class="small crimson">BEHL HOSPITALITY</small>
                 </h2>
 
                 <p class="about__description">
@@ -135,9 +135,9 @@
 
     <!--==================== POPULAR ====================-->
     <section class="popular section" id="popular">
-        <h2 class="section__title">
+        <h2 class="section__title text-center">
             Enjoy The Beauty <br>
-            Of The India
+            Of The <span class="crimson">Bharat</span>
         </h2>
 
         <div class="popular__container container grid">
@@ -192,7 +192,7 @@
     </section>
 
     <!--==================== EXPLORE ====================-->
-    <section class="explore section" id="explore">
+    <section class="explore section mb-5" id="explore">
         <div class="explore__container">
             <div class="explore__image">
                 <img src="<?= base_url('assets/img/explore-beach.jpg'); ?>" alt="explore image" class="explore__img">
@@ -203,7 +203,7 @@
                 <div class="explore__data">
                     <h2 class="section__title">
                         Explore The <br>
-                        Best Paradises
+                        Best <span class="crimson">Paradises</span>
                     </h2>
 
                     <p class="explore__description">
@@ -223,8 +223,25 @@
         </div>
     </section>
 
+    <section class="aminated_iternity text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="iternity_text">
+                    <h1 class="ok">TRAVEL ITERNITY</h1>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="iternity_video">
+                    <iframe class="video_iternity" src="https://www.youtube.com/embed/LIgWlfeMdVE?controls=0&autoplay=1&showinfo=0&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Ftravel.nicdark.com&widgetid=1" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
     <!--==================== JOIN ====================-->
-    <section class="join section">
+    <section class="join section mt-5">
         <div class="join__container container grid">
             <div class="join__data">
                 <h2 class="section__title">
@@ -274,6 +291,33 @@
             }
         });
     }
+</script>
+
+<script>
+    // Define your GSAP animation timeline
+    const tt = gsap.timeline();
+
+    // Add the animation properties
+    tt.to('.ok', {
+        scrollTrigger: {
+            trigger: '.ok', 
+            start: 'top center', // Adjust this as needed
+            end: 'bottom center', // Adjust this as needed
+            scrub: true, // Smooth scrolling animation
+            markers: true
+        },
+        fontSize: '150px', // New font size
+    });
+    // tt.to('span', {
+    //     scrollTrigger: {
+    //         trigger: '.animated-div',
+    //         start: 'top center', // Adjust this as needed
+    //         end: 'bottom center', // Adjust this as needed
+    //         scrub: true, // Smooth scrolling animation
+    //         markers: true
+    //     },
+    //     fontSize: '48px', // New font size
+    // });
 </script>
 
 </body>

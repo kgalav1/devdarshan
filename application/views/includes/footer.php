@@ -151,7 +151,7 @@
                          </div>
                          <div class="col-md-12 mb-2">
                              <label for="message" class="form-label">Message</label>
-                             <textarea name="message" id="message" cols="30" rows="5" class="form-control-sm" placeholder="Message" maxlength="200" autocomplete="off" required></textarea>
+                             <textarea name="message" id="modal_message" cols="30" rows="5" class="form-control-sm" placeholder="Message" maxlength="200" autocomplete="off" required></textarea>
                          </div>
                      </div>
              </div>
@@ -176,6 +176,7 @@
  <script src="<?= base_url('assets/js/notify.min.js'); ?>"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
  <script src="<?= base_url('assets/js/swiper.js'); ?>"></script>
  <script src="<?= base_url('assets/js/scrollreveal.min.js'); ?>"></script>
  <script src="https://www.google.com/recaptcha/api.js?render=6LcclB8oAAAAAFrK2Xtjx31JFbqCmy0s941Vg3LK"></script>
